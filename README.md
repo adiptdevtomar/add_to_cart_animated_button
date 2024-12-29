@@ -63,8 +63,6 @@ Here is a cheatsheet of parameters available for customization
 The most basic button will increment and decrement the count by 1 with an animation after you
 override the required functions. When count is 0, a standard 'ADD' Text is used as a placeholder.
 
-<img src="readme_resources/basic_button.gif" align = "right" width="300px">
-
 ```dart
 // Default value of cart item
 int value = 0;
@@ -86,12 +84,12 @@ Widget build(BuildContext context) {
 }
 ```
 
+<img src="readme_resources/basic_button.gif" width="300px">
+
 ### Outlined Button:
 
 Moving on to where real animation shows up, you can animate the change in button size and it's
 style when an item is added. Just provide the widget with both before and after BoxDecorations and watch the magic happen.
-
-<img src="readme_resources/outlined_button.gif" align = "right">
 
 ```dart
 
@@ -132,3 +130,5 @@ Widget build(BuildContext context) {
   );
 }
 ```
+
+<img src="readme_resources/outlined_button.gif" width="300px">
