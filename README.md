@@ -86,13 +86,14 @@ Widget build(BuildContext context) {
 
 <img src="readme_resources/basic_button.gif" width="300px">
 
-### Outlined Button:
+### Expanding Button:
 
 Moving on to where real animation shows up, you can animate the change in button size and it's
 style when an item is added. Just provide the widget with both before and after BoxDecorations and watch the magic happen.
 
-```dart
+Use the `widthScaleFactor` and `heightScaleFactor` parameter to scale size of button after item is added.
 
+```dart
 int value = 0;
 
 @override
@@ -109,6 +110,8 @@ Widget build(BuildContext context) {
       value = newValue;
       setState(() {});
     },
+    width: 80,
+    widthScaleFactor: 1.7,
     duration: Duration(milliseconds: 100),
     initialBoxDecoration: BoxDecoration(
       color: Colors.white,
