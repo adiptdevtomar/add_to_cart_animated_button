@@ -18,7 +18,7 @@ class _PlusButtonState extends State<PlusButton> {
       value: value,
       onIncrement: (newValue) {
         // No value increment when max value is reached
-        if(newValue == value){
+        if (newValue == value) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('Max quantity Reached for this products.'),

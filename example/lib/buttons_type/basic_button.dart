@@ -9,7 +9,6 @@ class BasicButton extends StatefulWidget {
 }
 
 class _BasicButtonState extends State<BasicButton> {
-
   // Default value of cart item
   int value = 0;
 
