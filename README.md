@@ -85,7 +85,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<img src="readme_resources/basic_button.gif" width="300px">
+<img src="https://github.com/adiptdevtomar/add_to_cart_animated_button/blob/master/readme_resources/basic_button.gif?raw=true" width="300px">
 
 
 ### Expanding Button:
@@ -136,7 +136,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<img src="readme_resources/expanding_button.gif" width="300px">
+<img src="https://github.com/adiptdevtomar/add_to_cart_animated_button/blob/master/readme_resources/expanding_button.gif?raw=true" width="300px">
 
 
 ### Plus Button:
@@ -188,7 +188,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-<img src="readme_resources/plus_button.gif" width="300px">
+<img src="https://github.com/adiptdevtomar/add_to_cart_animated_button/blob/master/readme_resources/plus_button.gif?raw=true" width="300px">
 
 
 ### Custom Styling:
@@ -199,7 +199,7 @@ Add custom SnackBar handling on `onIncrement` function and many more!
 
 Code for this can be found in the [example](https://github.com/adiptdevtomar/add_to_cart_animated_button/tree/master/example) project
 
-<img src="readme_resources/styling.gif" width="300px">
+<img src="https://github.com/adiptdevtomar/add_to_cart_animated_button/blob/master/readme_resources/styling.gif?raw=true" width="300px">
 
 
 ## Bugs or Requests
