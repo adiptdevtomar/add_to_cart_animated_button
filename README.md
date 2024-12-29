@@ -135,3 +135,64 @@ Widget build(BuildContext context) {
 ```
 
 <img src="readme_resources/expanding_button.gif" width="300px">
+
+### Plus Button:
+
+Change the default 'ADD' Text to any other widget, like in this example where a Plus Button is used as a placeholder which later expands into a counter widget.
+
+Setting the initial `height` and `width` of the button to form a square.
+
+```dart
+int value = 0;
+
+@override
+Widget build(BuildContext context) {
+  return AddToCart(
+    value: value,
+    onIncrement: (newValue) {
+      // No value increment when max value is reached
+      if(newValue == value){
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Max quantity Reached for this products.'),
+          ),
+        );
+        return;
+      }
+
+      // New Increased Value
+      value = newValue;
+      setState(() {});
+    },
+    onDecrement: (newValue) {
+      // New Decreased Value
+      value = newValue;
+      setState(() {});
+    },
+    width: 40,
+    height: 40,
+    heightScaleFactor: 1.2,
+    widthScaleFactor: 3.4,
+    duration: Duration(milliseconds: 100),
+    initialBoxDecoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(10),
+      border: Border.all(
+        color: Color.fromRGBO(74, 132, 44, 1),
+        width: 2,
+      ),
+    ),
+    initialText: Text(
+      '+',
+      style: TextStyle(
+        color: Color.fromRGBO(74, 132, 44, 1),
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
+    ),
+    maxValue: 8,
+  );
+}
+```
+
+<img src="readme_resources/plus_button.gif" width="300px">

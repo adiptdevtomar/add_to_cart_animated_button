@@ -1,14 +1,14 @@
 import 'package:add_to_cart_animated_button/add_to_cart_animated_button.dart';
 import 'package:flutter/material.dart';
 
-class OutlineButton extends StatefulWidget {
-  const OutlineButton({super.key});
+class PlusButton extends StatefulWidget {
+  const PlusButton({super.key});
 
   @override
-  State<OutlineButton> createState() => _OutlineButtonState();
+  State<PlusButton> createState() => _PlusButtonState();
 }
 
-class _OutlineButtonState extends State<OutlineButton> {
+class _PlusButtonState extends State<PlusButton> {
   // Default value of cart item
   int value = 0;
 
@@ -17,6 +17,16 @@ class _OutlineButtonState extends State<OutlineButton> {
     return AddToCart(
       value: value,
       onIncrement: (newValue) {
+        // No value increment when max value is reached
+        if(newValue == value){
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Max quantity Reached for this products.'),
+            ),
+          );
+          return;
+        }
+
         // New Increased Value
         value = newValue;
         setState(() {});
@@ -26,6 +36,10 @@ class _OutlineButtonState extends State<OutlineButton> {
         value = newValue;
         setState(() {});
       },
+      width: 40,
+      height: 40,
+      heightScaleFactor: 1.2,
+      widthScaleFactor: 3.4,
       duration: Duration(milliseconds: 100),
       initialBoxDecoration: BoxDecoration(
         color: Colors.white,
@@ -36,7 +50,7 @@ class _OutlineButtonState extends State<OutlineButton> {
         ),
       ),
       initialText: Text(
-        'ADD',
+        '+',
         style: TextStyle(
           color: Color.fromRGBO(74, 132, 44, 1),
           fontWeight: FontWeight.bold,
