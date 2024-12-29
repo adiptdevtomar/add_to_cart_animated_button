@@ -1,3 +1,7 @@
-## 0.0.1
+## v0.0.2
 
-* TODO: Describe initial release.
+Update README.md
+
+## v0.0.1
+
+Initial Version
