@@ -1,7 +1,8 @@
 name: add_to_cart_animated_button
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/adiptdevtomar/add_to_cart_animated_button
+maintainer: Adipt Dev Tomar
 
 environment:
   sdk: ^3.6.0
