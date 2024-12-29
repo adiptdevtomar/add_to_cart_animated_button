@@ -1,4 +1,7 @@
-import 'package:example/home_page.dart';
+import 'package:example/buttons_type/basic_button.dart';
+import 'package:example/buttons_type/custom_styling.dart';
+import 'package:example/buttons_type/expanding_button.dart';
+import 'package:example/buttons_type/plus_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +20,34 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: Scaffold(
+        body: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 50,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                BasicButton(),
+                SizedBox(
+                  height: 20,
+                ),
+                ExpandingButton(),
+                SizedBox(
+                  height: 20,
+                ),
+                PlusButton(),
+                SizedBox(
+                  height: 20,
+                ),
+                CustomStyling(),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

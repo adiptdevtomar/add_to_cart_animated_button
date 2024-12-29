@@ -2,7 +2,7 @@
 
 Add to Cart Button with Animation and Custom Styling for Modern Shopping apps like experience.
 
-See the [install instructions](https://www.google.com).
+See the [install instructions](https://pub.dev/packages/add_to_cart_animated_button/example).
 
 ## References
 
