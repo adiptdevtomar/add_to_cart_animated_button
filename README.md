@@ -191,7 +191,7 @@ Widget build(BuildContext context) {
 <img src="readme_resources/plus_button.gif" width="300px">
 
 
-### Custom Styling
+### Custom Styling:
 
 Experiment with colors, styles, and decorations to bring your animations to life and making Add to Cart action for a user fun.
 
