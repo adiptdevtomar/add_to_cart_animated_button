@@ -63,6 +63,8 @@ Here is a cheatsheet of parameters available for customization
 The most basic button will increment and decrement the count by 1 with an animation after you
 override the required functions. When count is 0, a standard 'ADD' Text is used as a placeholder.
 
+<img src="readme_resources/basic_button.gif" align = "right" width="300" style="padding-left:20px">
+
 ```dart
 // Default value of cart item
 int value = 0;
@@ -83,8 +85,6 @@ Widget build(BuildContext context) {
   );
 }
 ```
-
-![Basic Button](readme_resources/basic_button.gif)
 
 ### Outlined Button:
 

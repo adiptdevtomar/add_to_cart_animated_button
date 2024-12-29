@@ -20,7 +20,7 @@ class AddToCart extends StatefulWidget {
   final TextStyle? counterTextStyle;
 
   /// Duration for the animations.
-  final Duration? duration;
+  final Duration duration;
 
   /// Box decoration for the initial state.
   final BoxDecoration? initialBoxDecoration;
@@ -61,7 +61,7 @@ class AddToCart extends StatefulWidget {
     required this.maxValue,
     this.initialText,
     this.counterTextStyle,
-    this.duration,
+    this.duration = const Duration(milliseconds: 100),
     this.initialBoxDecoration,
     this.counterBoxDecoration,
     this.incrementIcon,
@@ -80,14 +80,11 @@ class AddToCart extends StatefulWidget {
 class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    // Set the animation duration.
-    final duration = widget.duration ?? const Duration(milliseconds: 200);
-
     // Check if the item is already added to the cart.
     final bool isAdded = widget.value > widget.minValue;
 
     return AnimatedContainer(
-      duration: widget.duration ?? duration,
+      duration: widget.duration,
       // Adjust size based on whether the item is added.
       height:
       isAdded ? widget.height * widget.heightScaleFactor : widget.height,
@@ -108,7 +105,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
         children: [
           // Counter state UI with decrement, counter, and increment buttons.
           AnimatedOpacity(
-            duration: duration,
+            duration: widget.duration,
             opacity: isAdded ? 1 : 0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,7 +114,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                 // Decrement button.
                 Expanded(
                   child: AnimatedSlide(
-                    duration: duration,
+                    duration: widget.duration,
                     offset:
                     isAdded ? const Offset(0, 0) : const Offset(-0.4, 0),
                     child: InkWell(
@@ -136,7 +133,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                 // Counter value display.
                 Expanded(
                   child: AnimatedCounter(
-                    duration: duration,
+                    duration: widget.duration,
                     height: isAdded
                         ? widget.height * widget.heightScaleFactor
                         : widget.height,
@@ -152,7 +149,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                 // Increment button.
                 Expanded(
                   child: AnimatedSlide(
-                    duration: duration,
+                    duration: widget.duration,
                     offset: isAdded ? const Offset(0, 0) : const Offset(0.4, 0),
                     child: Opacity(
                       opacity: (widget.value >= widget.maxValue) ? 0.6 : 1,
@@ -180,7 +177,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
           IgnorePointer(
             ignoring: isAdded,
             child: AnimatedOpacity(
-              duration: duration,
+              duration: widget.duration,
               opacity: isAdded ? 0 : 1,
               child: InkWell(
                 highlightColor: Colors.transparent,
