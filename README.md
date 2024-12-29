@@ -200,3 +200,8 @@ Add custom SnackBar handling on `onIncrement` function and many more!
 Code for this can be found in the [example](https://github.com/adiptdevtomar/add_to_cart_animated_button/tree/master/example) project
 
 <img src="readme_resources/styling.gif" width="300px">
+
+
+## Bugs or Requests
+If you encounter any problems feel free to open an issue. If you feel the library is missing a feature, please raise a ticket on GitHub and i'll look into it.
+
