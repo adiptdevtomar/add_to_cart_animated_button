@@ -6,4 +6,5 @@ See the [install instructions](https://www.google.com).
 
 ## Preview with Usage
 
-![Basic Button](https://github.com/adiptdevtomar/add_to_cart_animated_button/blob/master/readme_resources/basic_button.gif=250x250)
+<img src=<MY_GIF>  height="275">
+![Basic Button](https://github.com/adiptdevtomar/add_to_cart_animated_button/blob/master/readme_resources/basic_button.gif)
