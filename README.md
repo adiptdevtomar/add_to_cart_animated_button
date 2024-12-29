@@ -197,6 +197,6 @@ Experiment with colors, styles, and decorations to bring your animations to life
 
 Add custom SnackBar handling on `onIncrement` function and many more!
 
-Code for this can be found in the [example](https://www.google.com) project
+Code for this can be found in the [example](https://github.com/adiptdevtomar/add_to_cart_animated_button/tree/master/example) project
 
 <img src="readme_resources/styling.gif" width="300px">
