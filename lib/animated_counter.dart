@@ -44,39 +44,36 @@ class _AnimatedCounterState extends State<AnimatedCounter> {
     final heightOffset = (widget.height - size.height) / 2;
 
     return Center(
-      child: DefaultTextStyle.merge(
-        style: widget.style,
-        child: TweenAnimationBuilder<double>(
-          curve: Curves.linear,
-          duration: widget.duration,
-          tween: Tween(end: widget.value.toDouble()),
-          builder: (_, double value, __) {
-            final whole = value.floor();
-            final decimal = value - whole;
-            final hei = size.height + heightOffset;
-            return SizedBox(
-              height: double.infinity,
-              child: Stack(
-                children: [
-                  // Render the current digit with decreasing opacity.
-                  DigitBuilder(
-                    value: whole,
-                    textStyle: widget.style,
-                    offset: (hei * decimal) + heightOffset,
-                    opacity: 1 - decimal,
-                  ),
-                  // Render the next digit with increasing opacity.
-                  DigitBuilder(
-                    value: whole + 1,
-                    textStyle: widget.style,
-                    offset: (hei * decimal - hei) + heightOffset,
-                    opacity: decimal,
-                  ),
-                ],
-              ),
-            );
-          },
-        ),
+      child: TweenAnimationBuilder<double>(
+        curve: Curves.linear,
+        duration: widget.duration,
+        tween: Tween(end: widget.value.toDouble()),
+        builder: (_, double value, __) {
+          final whole = value.floor();
+          final decimal = value - whole;
+          final hei = size.height + heightOffset;
+          return SizedBox(
+            height: double.infinity,
+            child: Stack(
+              children: [
+                // Render the current digit with decreasing opacity.
+                DigitBuilder(
+                  value: whole,
+                  textStyle: widget.style,
+                  offset: (hei * decimal) + heightOffset,
+                  opacity: 1 - decimal,
+                ),
+                // Render the next digit with increasing opacity.
+                DigitBuilder(
+                  value: whole + 1,
+                  textStyle: widget.style,
+                  offset: (hei * decimal - hei) + heightOffset,
+                  opacity: decimal,
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

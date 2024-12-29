@@ -1,3 +1,4 @@
+import 'package:example/buttons_type/custom_styling.dart';
 import 'package:example/buttons_type/plus_button.dart';
 import 'package:example/buttons_type/basic_button.dart';
 import 'package:example/buttons_type/expanding_button.dart';
@@ -32,6 +33,10 @@ class _HomePageState extends State<HomePage> {
                 height: 20,
               ),
               PlusButton(),
+              SizedBox(
+                height: 20,
+              ),
+              CustomStyling(),
             ],
           ),
         ),

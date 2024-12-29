@@ -13,6 +13,7 @@ Here is a cheatsheet of parameters available for customization
 
 - **`onIncrement`**: *(Function(int))*  
   Callback triggered when the increment button is pressed. The updated value is passed as a parameter.
+  - If the maximum value (`maxValue`) is reached, the callback is triggered but returns the same value without incrementing.
 
 - **`onDecrement`**: *(Function(int))*  
   Callback triggered when the decrement button is pressed. The updated value is passed as a parameter.
@@ -152,16 +153,6 @@ Widget build(BuildContext context) {
   return AddToCart(
     value: value,
     onIncrement: (newValue) {
-      // No value increment when max value is reached
-      if(newValue == value){
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Max quantity Reached for this products.'),
-          ),
-        );
-        return;
-      }
-
       // New Increased Value
       value = newValue;
       setState(() {});
@@ -198,3 +189,14 @@ Widget build(BuildContext context) {
 ```
 
 <img src="readme_resources/plus_button.gif" width="300px">
+
+
+### Custom Styling
+
+Experiment with colors, styles, and decorations to bring your animations to life and making Add to Cart action for a user fun.
+
+Add custom SnackBar handling on `onIncrement` function and many more!
+
+Code for this can be found in the [example](https://www.google.com) project
+
+<img src="readme_resources/styling.gif" width="300px">

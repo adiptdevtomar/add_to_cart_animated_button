@@ -87,12 +87,12 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
       duration: widget.duration,
       // Adjust size based on whether the item is added.
       height:
-      isAdded ? widget.height * widget.heightScaleFactor : widget.height,
+          isAdded ? widget.height * widget.heightScaleFactor : widget.height,
       width: isAdded ? widget.width * widget.widthScaleFactor : widget.width,
       // Use the appropriate box decoration for the state.
       decoration: (isAdded
-          ? widget.counterBoxDecoration
-          : widget.initialBoxDecoration) ??
+              ? widget.counterBoxDecoration
+              : widget.initialBoxDecoration) ??
           const BoxDecoration(
             color: Color.fromRGBO(74, 132, 44, 1),
             borderRadius: BorderRadius.all(
@@ -116,7 +116,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                   child: AnimatedSlide(
                     duration: widget.duration,
                     offset:
-                    isAdded ? const Offset(0, 0) : const Offset(-0.4, 0),
+                        isAdded ? const Offset(0, 0) : const Offset(-0.4, 0),
                     child: InkWell(
                       highlightColor: Colors.transparent,
                       splashColor: Colors.transparent,
@@ -138,12 +138,13 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                         ? widget.height * widget.heightScaleFactor
                         : widget.height,
                     value: widget.value,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      height: 1,
-                      color: Colors.white,
-                    ),
+                    style: widget.counterTextStyle?.copyWith(height: 1) ??
+                        const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          height: 1,
+                          color: Colors.white,
+                        ),
                   ),
                 ),
                 // Increment button.
