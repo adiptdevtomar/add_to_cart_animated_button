@@ -86,6 +86,7 @@ Widget build(BuildContext context) {
 
 <img src="readme_resources/basic_button.gif" width="300px">
 
+
 ### Expanding Button:
 
 Moving on to where real animation shows up, you can animate the change in button size and it's
@@ -135,6 +136,7 @@ Widget build(BuildContext context) {
 ```
 
 <img src="readme_resources/expanding_button.gif" width="300px">
+
 
 ### Plus Button:
 
