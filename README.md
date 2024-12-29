@@ -134,4 +134,4 @@ Widget build(BuildContext context) {
 }
 ```
 
-<img src="readme_resources/outlined_button.gif" width="300px">
+<img src="readme_resources/expanding_button.gif" width="300px">
