@@ -29,3 +29,19 @@ migrate_working_dir/
 .flutter-plugins
 .flutter-plugins-dependencies
 build/
+
+# Android
+**/android/.gradle/
+**/android/local.properties
+**/android/app/build/
+**/android/key.properties
+**/android/captures/
+**/android/*.iml
+
+# iOS
+**/ios/Flutter/.last_build_id
+**/ios/Pods/
+**/ios/Podfile.lock
+**/ios/Runner.xcworkspace/
+**/ios/Runner.xcuserdatad/
+**/ios/.symlinks/
