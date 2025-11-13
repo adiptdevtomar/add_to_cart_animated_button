@@ -37,6 +37,8 @@ build/
 **/android/key.properties
 **/android/captures/
 **/android/*.iml
+**/android/.cxx/
+
 
 # iOS
 **/ios/Flutter/.last_build_id
