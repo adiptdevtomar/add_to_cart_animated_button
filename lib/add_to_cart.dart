@@ -1,4 +1,6 @@
 import 'package:add_to_cart_animated_button/animated_counter.dart';
+import 'package:flutter/foundation.dart'
+    show DiagnosticPropertiesBuilder, IntProperty;
 import 'package:flutter/material.dart';
 
 /// A customizable and animated "Add to Cart" widget that transitions between an
@@ -8,10 +10,10 @@ class AddToCart extends StatefulWidget {
   final int value;
 
   /// Callback triggered when the increment button is pressed.
-  final Function(int) onIncrement;
+  final Function() onIncrement;
 
   /// Callback triggered when the decrement button is pressed.
-  final Function(int) onDecrement;
+  final Function() onDecrement;
 
   /// Text displayed in the initial state.
   final Text? initialText;
@@ -78,6 +80,15 @@ class AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties.add(IntProperty('value', widget.value));
+    properties.add(IntProperty('minValue', widget.minValue));
+    properties.add(IntProperty('maxValue', widget.maxValue));
+    super.debugFillProperties(properties);
+  }
+
   @override
   Widget build(BuildContext context) {
     // Check if the item is already added to the cart.
@@ -121,7 +132,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                       highlightColor: Colors.transparent,
                       splashColor: Colors.transparent,
                       hoverColor: Colors.transparent,
-                      onTap: () => widget.onDecrement.call(widget.value - 1),
+                      onTap: () => widget.onDecrement.call(),
                       child: widget.decrementIcon ??
                           const Icon(
                             Icons.remove,
@@ -158,10 +169,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                         highlightColor: Colors.transparent,
                         splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,
-                        onTap: () => widget.onIncrement.call(
-                            (widget.value >= widget.maxValue)
-                                ? widget.value
-                                : widget.value + 1),
+                        onTap: () => widget.onIncrement.call(),
                         child: widget.incrementIcon ??
                             const Icon(
                               Icons.add,
@@ -184,7 +192,7 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
                 hoverColor: Colors.transparent,
-                onTap: () => widget.onIncrement.call(widget.value + 1),
+                onTap: () => widget.onIncrement.call(),
                 child: Center(
                   child: widget.initialText ??
                       const Text(

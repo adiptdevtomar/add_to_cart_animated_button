@@ -16,24 +16,14 @@ class _PlusButtonState extends State<PlusButton> {
   Widget build(BuildContext context) {
     return AddToCart(
       value: value,
-      onIncrement: (newValue) {
-        // No value increment when max value is reached
-        if (newValue == value) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Max quantity Reached for this products.'),
-            ),
-          );
-          return;
-        }
-
+      onIncrement: () {
         // New Increased Value
-        value = newValue;
+        value += 1;
         setState(() {});
       },
-      onDecrement: (newValue) {
+      onDecrement: () {
         // New Decreased Value
-        value = newValue;
+        value -= 1;
         setState(() {});
       },
       width: 40,

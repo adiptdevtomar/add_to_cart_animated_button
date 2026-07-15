@@ -16,9 +16,9 @@ class _CustomStylingState extends State<CustomStyling> {
   Widget build(BuildContext context) {
     return AddToCart(
       value: value,
-      onIncrement: (newValue) {
+      onIncrement: () {
         // No value increment when max value is reached
-        if (newValue == value) {
+        if (2 == value) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('Max quantity Reached for this products.'),
@@ -28,12 +28,12 @@ class _CustomStylingState extends State<CustomStyling> {
         }
 
         // New Increased Value
-        value = newValue;
+        value = value + 1;
         setState(() {});
       },
-      onDecrement: (newValue) {
+      onDecrement: () {
         // New Decreased Value
-        value = newValue;
+        value = value - 1;
         setState(() {});
       },
       width: 180,

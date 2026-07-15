@@ -1,5 +1,7 @@
 import 'package:add_to_cart_animated_button/add_to_cart_animated_button.dart';
+import 'package:example/inherited/base_value.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class BasicButton extends StatefulWidget {
   const BasicButton({super.key});
@@ -14,19 +16,21 @@ class _BasicButtonState extends State<BasicButton> {
 
   @override
   Widget build(BuildContext context) {
-    return AddToCart(
-      value: value,
-      onIncrement: (newValue) {
-        // New Increased Value
-        value = newValue;
-        setState(() {});
+    return Consumer<BaseValue>(
+      builder: (context, value, child) {
+        return AddToCart(
+          value: value.count,
+          onIncrement: () {
+            // New Increased Value
+            value.updateCount(value.count + 1);
+          },
+          onDecrement: () {
+            // New Decreased Value
+            value.updateCount(value.count - 1);
+          },
+          maxValue: 8,
+        );
       },
-      onDecrement: (newValue) {
-        // New Decreased Value
-        value = newValue;
-        setState(() {});
-      },
-      maxValue: 8,
     );
   }
 }

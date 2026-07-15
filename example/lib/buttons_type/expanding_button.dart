@@ -16,14 +16,14 @@ class _ExpandingButtonState extends State<ExpandingButton> {
   Widget build(BuildContext context) {
     return AddToCart(
       value: value,
-      onIncrement: (newValue) {
+      onIncrement: () {
         // New Increased Value
-        value = newValue;
+        value += 1;
         setState(() {});
       },
-      onDecrement: (newValue) {
+      onDecrement: () {
         // New Decreased Value
-        value = newValue;
+        value -= 1;
         setState(() {});
       },
       width: 80,

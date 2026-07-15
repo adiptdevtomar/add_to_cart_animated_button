@@ -24,6 +24,9 @@ migrate_working_dir/
 # Flutter/Dart/Pub related
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
 /pubspec.lock
+
+# graphify knowledge-graph output (local tooling, not part of the package)
+graphify-out/
 **/doc/api/
 .dart_tool/
 .flutter-plugins

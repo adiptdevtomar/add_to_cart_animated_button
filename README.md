@@ -11,12 +11,11 @@ Here is a cheatsheet of parameters available for customization
 - **`value`**: *(int)*  
   The current value of the counter.
 
-- **`onIncrement`**: *(Function(int))*  
-  Callback triggered when the increment button is pressed. The updated value is passed as a parameter.
-  - If the maximum value (`maxValue`) is reached, the callback is triggered but returns the same value without incrementing.
+- **`onIncrement`**: *(Function())*  
+  Callback triggered when the increment button is pressed. Read the new value from your own state/controller inside the callback.
 
-- **`onDecrement`**: *(Function(int))*  
-  Callback triggered when the decrement button is pressed. The updated value is passed as a parameter.
+- **`onDecrement`**: *(Function())*  
+  Callback triggered when the decrement button is pressed. Read the new value from your own state/controller inside the callback.
 
 - **`initialText`**: *(Text?)*  
   Text displayed in the initial state.
@@ -72,12 +71,12 @@ int value = 0;
 Widget build(BuildContext context) {
   return AddToCart(
     value: value,
-    onIncrement: (newValue) {
-      value = newValue;
+    onIncrement: () {
+      value++;
       setState(() {});
     },
-    onDecrement: (newValue) {
-      value = newValue;
+    onDecrement: () {
+      value--;
       setState(() {});
     },
     maxValue: 8,
@@ -102,14 +101,14 @@ int value = 0;
 Widget build(BuildContext context) {
   return AddToCart(
     value: value,
-    onIncrement: (newValue) {
+    onIncrement: () {
       // New Increased Value
-      value = newValue;
+      value++;
       setState(() {});
     },
-    onDecrement: (newValue) {
+    onDecrement: () {
       // New Decreased Value
-      value = newValue;
+      value--;
       setState(() {});
     },
     width: 80,
@@ -152,14 +151,14 @@ int value = 0;
 Widget build(BuildContext context) {
   return AddToCart(
     value: value,
-    onIncrement: (newValue) {
+    onIncrement: () {
       // New Increased Value
-      value = newValue;
+      value++;
       setState(() {});
     },
-    onDecrement: (newValue) {
+    onDecrement: () {
       // New Decreased Value
-      value = newValue;
+      value--;
       setState(() {});
     },
     width: 40,
