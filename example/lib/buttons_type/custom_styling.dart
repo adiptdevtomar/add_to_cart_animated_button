@@ -26,6 +26,13 @@ class _CustomStylingState extends State<CustomStyling> {
         value = value - 1;
         setState(() {});
       },
+      onMaxValueReached: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Max quantity Reached for this products.'),
+          ),
+        );
+      },
       width: 180,
       height: 60,
       counterTextStyle: TextStyle(

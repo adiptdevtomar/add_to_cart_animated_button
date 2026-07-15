@@ -1,4 +1,5 @@
 import 'package:example/buttons_type/basic_button.dart';
+import 'package:example/buttons_type/controller_button.dart';
 import 'package:example/buttons_type/custom_styling.dart';
 import 'package:example/buttons_type/expanding_button.dart';
 import 'package:example/buttons_type/plus_button.dart';
@@ -59,6 +60,10 @@ class HomePage extends StatelessWidget {
                 height: 20,
               ),
               CustomStyling(),
+              SizedBox(
+                height: 20,
+              ),
+              ControllerButton(),
               SizedBox(
                 height: 20,
               ),

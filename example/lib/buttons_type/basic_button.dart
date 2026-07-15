@@ -20,14 +20,26 @@ class _BasicButtonState extends State<BasicButton> {
       builder: (context, value, child) {
         return AddToCart(
           value: value.count,
-          onIncrement: () {
-            // New Increased Value
+          // Simulates an API call before confirming the change -- the
+          // widget shows its built-in loading indicator and ignores
+          // further taps until this resolves.
+          onIncrement: () async {
+            await Future.delayed(const Duration(milliseconds: 600));
             value.updateCount(value.count + 1);
           },
-          onDecrement: () {
-            // New Decreased Value
+          onDecrement: () async {
+            await Future.delayed(const Duration(milliseconds: 600));
             value.updateCount(value.count - 1);
           },
+          // A custom loader in place of the default CircularProgressIndicator.
+          loadingIndicator: const SizedBox(
+            height: 16,
+            width: 16,
+            child: CircularProgressIndicator(
+              strokeWidth: 3,
+              color: Colors.amber,
+            ),
+          ),
           maxValue: 8,
         );
       },
