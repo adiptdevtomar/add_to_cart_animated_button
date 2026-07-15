@@ -128,16 +128,21 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                     duration: widget.duration,
                     offset:
                         isAdded ? const Offset(0, 0) : const Offset(-0.4, 0),
-                    child: InkWell(
-                      highlightColor: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      onTap: () => widget.onDecrement.call(),
-                      child: widget.decrementIcon ??
-                          const Icon(
-                            Icons.remove,
-                            color: Colors.white,
-                          ),
+                    child: Opacity(
+                      opacity: (widget.value <= widget.minValue) ? 0.6 : 1,
+                      child: InkWell(
+                        highlightColor: Colors.transparent,
+                        splashColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        onTap: (widget.value <= widget.minValue)
+                            ? null
+                            : () => widget.onDecrement.call(),
+                        child: widget.decrementIcon ??
+                            const Icon(
+                              Icons.remove,
+                              color: Colors.white,
+                            ),
+                      ),
                     ),
                   ),
                 ),
@@ -169,7 +174,9 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                         highlightColor: Colors.transparent,
                         splashColor: Colors.transparent,
                         hoverColor: Colors.transparent,
-                        onTap: () => widget.onIncrement.call(),
+                        onTap: (widget.value >= widget.maxValue)
+                            ? null
+                            : () => widget.onIncrement.call(),
                         child: widget.incrementIcon ??
                             const Icon(
                               Icons.add,
@@ -192,7 +199,9 @@ class _AddToCartState extends State<AddToCart> with TickerProviderStateMixin {
                 highlightColor: Colors.transparent,
                 splashColor: Colors.transparent,
                 hoverColor: Colors.transparent,
-                onTap: () => widget.onIncrement.call(),
+                onTap: (widget.value >= widget.maxValue)
+                    ? null
+                    : () => widget.onIncrement.call(),
                 child: Center(
                   child: widget.initialText ??
                       const Text(

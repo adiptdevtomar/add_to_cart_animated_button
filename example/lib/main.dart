@@ -4,7 +4,6 @@ import 'package:example/buttons_type/expanding_button.dart';
 import 'package:example/buttons_type/plus_button.dart';
 import 'package:example/inherited/base_value.dart';
 import 'package:example/inherited/test_screen.dart' show TextScreen;
-import 'package:example/test/animation_example.dart' show AnimationExample;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -73,10 +72,6 @@ class HomePage extends StatelessWidget {
                 },
                 child: Text('Inherited Test'),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              AnimationExample(),
             ],
           ),
         ),

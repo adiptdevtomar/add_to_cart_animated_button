@@ -12,10 +12,10 @@ Here is a cheatsheet of parameters available for customization
   The current value of the counter.
 
 - **`onIncrement`**: *(Function())*  
-  Callback triggered when the increment button is pressed. Read the new value from your own state/controller inside the callback.
+  Callback triggered when the increment button is pressed. Read the new value from your own state/controller inside the callback. Not triggered once `value` reaches `maxValue`.
 
 - **`onDecrement`**: *(Function())*  
-  Callback triggered when the decrement button is pressed. Read the new value from your own state/controller inside the callback.
+  Callback triggered when the decrement button is pressed. Read the new value from your own state/controller inside the callback. Not triggered once `value` reaches `minValue`.
 
 - **`initialText`**: *(Text?)*  
   Text displayed in the initial state.

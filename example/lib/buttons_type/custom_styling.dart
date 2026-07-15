@@ -17,16 +17,6 @@ class _CustomStylingState extends State<CustomStyling> {
     return AddToCart(
       value: value,
       onIncrement: () {
-        // No value increment when max value is reached
-        if (2 == value) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Max quantity Reached for this products.'),
-            ),
-          );
-          return;
-        }
-
         // New Increased Value
         value = value + 1;
         setState(() {});
